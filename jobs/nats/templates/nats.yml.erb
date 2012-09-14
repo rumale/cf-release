@@ -1,5 +1,6 @@
 ---
-net: <%= spec.networks.send(properties.networks.apps).ip %>
+# net: <%= spec.networks.send(properties.networks.apps).ip %>
+net: 0.0.0.0
 port: <%= properties.nats.port %>
 
 pid_file: /var/vcap/sys/run/nats/nats.pid
