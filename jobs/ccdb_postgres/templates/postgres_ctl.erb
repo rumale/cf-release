@@ -30,7 +30,8 @@ case "$1" in
         exit 1
       fi
 
-      echo "host $DBNAME $USER 0.0.0.0/0 md5" >> $DATA_DIR/pg_hba.conf
+      # echo "host $DBNAME $USER 0.0.0.0/0 md5" >> $DATA_DIR/pg_hba.conf
+      cho "host all all  0.0.0.0/0 md5" >> $DATA_DIR/pg_hba.conf
 
       mkdir -p $DATA_DIR/pg_log
       chown vcap:vcap $DATA_DIR/pg_log
