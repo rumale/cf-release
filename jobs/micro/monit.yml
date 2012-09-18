@@ -6,6 +6,7 @@ core:
   - dea
   - health_manager
   - cloud_controller
+  - stager
 mongodb:
   - mongodb_node
   - mongodb_gateway
