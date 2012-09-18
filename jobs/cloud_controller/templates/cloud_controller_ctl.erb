@@ -55,6 +55,7 @@ case $1 in
     echo $$ > $PIDFILE
     chown vcap:vcap $PIDFILE
     mkdir -p $NFS_SHARE
+    chown vcap $NFS_SHARE
     <% if properties.nfs_server %>
     modprobe nfs
     mkdir -p $NFS_SHARE
