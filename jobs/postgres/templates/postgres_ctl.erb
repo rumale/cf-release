@@ -66,7 +66,7 @@ case "$1" in
     chown vcap:vcap $DATA_DIR/{postgresql,pg_hba}.conf
 
     echo "Starting PostgreSQL: "
-    su - vcap -c "$PACKAGE_DIR/bin/pg_ctl -o \"-h $HOST -p $PORT\" \
+    su - vcap -c "$PACKAGE_DIR/bin/pg_ctl -o \"-h <%= spec.networks.send(properties.networks.apps).ip %> -p $PORT\" \
                   -w start -D $DATA_DIR -l \"$DATA_DIR/pg_log/startup.log\""
 
     echo "PostgreSQL started successfully"
